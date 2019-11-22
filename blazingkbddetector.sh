@@ -1,9 +1,11 @@
 #!/bin/bash
-# v0.2
+# v0.3
 # 2019 (c) saahriktu
 # Thnx to a1batross and chenbr0
 # under GNU GPLv3
 BKCNTR=$(lsusb -d 258a:0016 | wc -l)
 if [ "$BKCNTR" -gt 0 ]; then
 	echo -e "DEXP Blazing Pro RGB keyboard(s) detected. Total number: $BKCNTR"
+	exit 0
 fi
+exit 1
